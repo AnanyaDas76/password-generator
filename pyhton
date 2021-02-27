@@ -1,0 +1,22 @@
+
+#random password generator
+
+import random
+import string
+
+
+def strong():
+    str1 = string.ascii_letters
+    nums = string.digits
+    sym = "~!@#$%^&*"
+    pw_1 = random.choice(str1)
+    pw_2 = random.choice(nums)
+    pw_3 = random.choice(sym)
+    comb = str1+nums+sym
+    pw_4 = "".join(random.choices(comb, k=5))
+    pwd = "".join(pw_1+pw_2+pw_3+pw_4)
+    final_pwd = "".join(random.sample(pwd, 8))
+
+    return final_pwd
+
+print(strong())
